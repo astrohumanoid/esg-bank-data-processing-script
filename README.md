@@ -62,4 +62,46 @@ To run the pipeline for a specific year:
 
    1. `template_downloading_file.py`
    2. `template_chunking_sentences.py`
-      3
+   3. `template_filter_relevant_sentences.py`
+
+This ensures that data flows correctly from raw documents to filtered sentence-level samples.
+
+---
+
+## 3. Post-Annotation Analysis
+
+After annotation and labeling are completed, the following analysis scripts are provided:
+
+* **`train_test_split.ipynb`**
+  Used to create consistent training and testing splits from the labeled dataset.
+
+* **`agreement_analysis.ipynb`**
+  Used to analyze inter-annotator agreement and labeling consistency.
+
+These notebooks support dataset validation and preparation for machine learning experiments.
+
+---
+
+## 4. Dataset Reference
+
+All data processing scripts in this repository are designed to work with and are derived from the following dataset:
+
+[https://huggingface.co/datasets/astrohumanoid/esg_bank](https://huggingface.co/datasets/astrohumanoid/esg_bank)
+
+Please refer to the original dataset page for licensing, data structure, and citation requirements.
+
+---
+
+## 5. Typical Workflow Summary
+
+1. Prepare yearly URL list CSV files.
+2. Download raw documents using `template_downloading_file.py`.
+3. Chunk documents into sentences using `template_chunking_sentences.py`.
+4. Filter relevant sentences using `template_filter_relevant_sentences.py`.
+5. Annotate and label the filtered data.
+6. Run post-processing and evaluation using:
+
+   * `train_test_split.ipynb`
+   * `agreement_analysis.ipynb`
+
+---
